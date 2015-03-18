@@ -20,7 +20,7 @@ var platforms = [],
   image = document.getElementById("sprite"),
   player, platformCount = 10,
   position = 0,
-  gravity = 0.16,
+  gravity = 0.2*0.8,
   animloop,
   flag = 0,
   menuloop, broken = 0,
@@ -142,8 +142,8 @@ function Platform() {
   if (score >= 5000) this.types = [2, 3, 3, 3, 4, 4, 4, 4];
   else if (score >= 2000 && score < 5000) this.types = [2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4];
   else if (score >= 1000 && score < 2000) this.types = [2, 2, 2, 3, 3, 3, 3, 3];
-  else if (score >= 500 && score < 1000) this.types = [1, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3];
-  else if (score >= 100 && score < 500) this.types = [1, 1, 1, 1, 2, 2];
+  else if (score >= 500 && score < 1000) this.types = [1, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4];
+  else if (score >= 100 && score < 500) this.types = [1, 1, 1, 1, 2, 2, 3, 3, 4];
   else this.types = [1];
 
   this.type = this.types[Math.floor(Math.random() * this.types.length)];
@@ -292,10 +292,10 @@ function init() {
     }
 
     // Speed limits!
-    if(player.vx > 8)
-      player.vx = 8;
-    else if(player.vx < -8)
-      player.vx = -8;
+    if(player.vx > 80)
+      player.vx = 80;
+    else if(player.vx < -80)
+      player.vx = -80;
 
     //console.log(player.vx);
     
